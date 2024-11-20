@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
+    gap: 2em;
+}
+header{
+    background-color: white;
+    display: flex;
+    width: 100%;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+.top {
+    width: 100%;
+    height: 100%;
+    margin: 0 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#topLeft{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#logo{
+    display: flex;
+    height: 70%;
+    
+}
+#topRight{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+#topRight>a:hover{
+    color: red;
+}
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    background-image: url('innovation.png');
+    background-size: cover;
+    background-position: center;
+}
+.overlay-text {
+    margin: 0 2em;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.starter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    height: 120px;
+    gap: 1em;    
+}
+.top-text {
+    font-size: 38px;
+    color: red;
+}
+.bot-text {
+    font-size: 28px;
+    color: darkblue;
+    font-weight: bold;
+}
+.info {
+    background-color: rgb(3, 3, 84);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin: 2em 10em;
+    word-spacing: 5px;
+}
+h2 {
+    color: red;
+}
+.content> p, ul li {
+    color: white;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+.makerspace {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 10em;
+    gap: 2em;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 48%;
+    gap: 2em;
+}
+.text>p {
+    color: black;
+}
+.parent-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 48%;
+    gap: 2em;
+}
+.link>a {
+    background-color: rgb(3, 3, 84);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    font-weight: bold; 
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin: 2em 10em;
+}
+.maker-club {
+    display: flex;
+    gap: 3em;
+    margin: 0 10em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.maker-club-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 48%;
+    gap: 2em;
+}
+.maker-club-text ul li, p{
+    color: black;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 48%;
+}
+.qr {
+    display: flex;
+    align-self: center;
+}
+.innovation-programs {
+    background-color: rgb(3, 3, 84);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.innovation-text {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 2em 10em;
+    gap: 1em;
+}
+.innovation-text>p {
+    color: white;
+}
+.img-parent {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 300px;
+}
+#image {
+    width: 300px;
+    height: 200px;
+}
+.digital-startup {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.digital-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 10em;
+    gap: 1em;
+}
+.digital-text>p {
+    color: black;
+}
+.mptc {
+    padding: 0 10em;
+    width: 100%;
+}
+.about-img {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.address-box {
+    background-color: rgb(255, 38, 0);
+    color: white;
+    width: 100%;
+    height: auto;
+
+}
+.address-content {
+    margin: 3em 10em; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+    gap: 1em;
+}
+.address {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.web-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+.items {
+    color: white;
+    text-decoration: none;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}   
+.address p {
+    color: white;
+}
+.contact p {
+    color: white;
+}
