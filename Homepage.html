@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+   <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --COLOR-WHITE:#fff;
+            --COLOR-RGB-BLUE:rgb(10,26,95);
+            --COLOR-RED:red;
+            --COLOR-GRAY:gray;
+            --COLOR-BLACK:black;
+
+            
+            --MEDIEM-LINE-HEIGH:1.5;
+            --BACKGROUND-COLOR-RED:red;
+            --BACKGROUND-COLOR-RGB-BLUE:rgba(10,26,95);
+            --BACKGROUND-COLOR-WHITE:#fff;
+            --BACKGROUND-ORANGERED: orangered;
+            --BACKGROUND-ALICEBLUE:aliceblue;
+            
+            
+
+            --WIDTH-80PER:80%;
+            --WIDTH-100PER:100%;
+            --WIDTH-50PER:50%;
+            --WIDTH-200PX:200px;
+
+
+            --HEIGHT-100VH:100vh;
+            --HEIGHT-80PER:80%;
+            --HEIGHT-200PX:200px;
+            --HEIGHT-450PX:450px;
+
+            
+            --GAP-0_8REM:0.8rem;
+            --GAP-1_5REM:1.5rem;
+            --GAP-2REM:2rem;
+
+            --PADDING-0_8REM:0.8rem;
+            --PADDING-1_5REM:1.5rem;
+            --PADDING-2REM:2rem;
+
+            --MARGIN-0_8REM:0.8rem;
+            --MARGIN-1_5REM:1.5rem;
+            --MARGIN-2REM:2rem;
+            --MARGIN-TOP--50PX:-50px;
+
+
+            --FONT-WEIGHT600:600;
+            --FONT-WEIGHT300:300;
+            
+            /* NAV */
+            --NAV-HEIGHT:10vh;
+            --NAV-WIDTH-LOGO-CAONTAINER:10vw;
+            --MENU-BAR-PADDING-MIN768PX:calc(10vh) 0.5rem;
+            
+                /* NAV-DROPDOWN-CONTENT */
+                --DROPDOWN-CONTENT-PADDING:20px 5px;
+                --DROPDOWN-CONTENT-FONT-SIZE:12px;
+                --DROPDOWN-CONTENT-LINE-HEIGHT:20px;
+            /* SECTION */
+                /* SECTION-FONT-SIZE */
+                --SECTION-H2-SIZE:clamp(1.2rem, 2vw, 1.5rem);
+                --SECTION-P-SIZE:clamp(1rem, 1.5vw, 1.2rem);
+                --SECTION-H1-SIZE:clamp(1.2rem,5vw,3.5rem);
+                
+                   /* SECTION-BOX-SUMMIT-PAPER */
+                   --SECTION-BOX-SUMMIT-PAPER:1rem;
+                   /* POLYGON */
+                   --POLYGON-PADDING-IN-CHILD:50px 20px;
+        }
+        body{
+            font-family: sans-serif;
+            
+            
+        }
+        p,h2{
+            line-height: var(--MEDIEM-LINE-HEIGH);
+        }
+       
+        
+        .logo-container{
+            width: var(--NAV-WIDTH-LOGO-CAONTAINER);
+        }
+        img{
+            max-width: var(--WIDTH-100PER);
+            
+        }
+        nav{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-evenly;
+            align-items: center;
+            height: var(--NAV-HEIGHT);
+            
+        }
+        .Global-ul {
+            
+            display: flex;
+            align-items: center;
+            
+        }
+        li{
+            list-style: none;
+        }
+        li a{
+            color: var(--COLOR-BLACK);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        li:hover{
+              background-color: var(--ALICEBLUE);
+            
+        }
+        .drop-down-content{
+            padding: var(--DROPDOWN-CONTENT-PADDING);
+            font-size:var(--DROPDOWN-CONTENT-FONT-SIZE);
+            line-height: var(--DROPDOWN-CONTENT-LINE-HEIGHT);
+            
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: var(--WIDTH-100PER);
+            min-height: var(--HEIGHT-100VH);
+            color: var(--COLOR-WHITE);
+            gap: var(--GAP-1_5REM);
+            
+            
+
+        }
+         
+        
+        
+        h2{
+            font-size: var(--SECTION-H2-SIZE);
+        }
+
+         p {
+            font-size: var(--SECTION-P-SIZE); /* Adjusts text but has a max and min */
+        }
+         h1{
+            font-size: var(--SECTION-H1-SIZE);
+        }
+        section:not(.sec1){
+            padding: var(--PADDING-2REM);
+        }
+        
+        .sec1{
+            text-align: center;
+        
+        }
+        .banner1{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(banner.jpg);
+            width: var(--WIDTH-100PER);
+            min-height: var(--HEIGHT-100VH);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--PADDING-2REM); 
+        }
+        .box-submit-paper{
+            clip-path: polygon(90% 0%,100% 30%,100% 100%,0% 100%,0% 0%);
+            background-color: var(--BACKGROUND-COLOR-RED);
+            padding: var(--SECTION-BOX-SUMMIT-PAPER);
+            cursor: pointer;
+            
+           
+            
+            
+        }
+        .sec2{
+            background-color: var(--BACKGROUND-COLOR-RGB-BLUE);
+            background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+            url(redlinestyle.png);
+
+            
+            background-repeat: no-repeat;
+            background-position: top right;
+            
+            
+        }
+        
+       
+      
+        .sec2 article{
+            padding: var(--PADDING-0_8REM);
+        }
+        .sec2 .Specified-Reseaarch-Track-Area figure img{
+            max-width: var(--WIDTH-80PER);
+        }
+        figure{
+            width: var(--WIDTH-100PER);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--GAP-0_8REM);
+            
+        }
+        .sec2 .polygon-parent{
+            width: var(--WIDTH-80PER);
+        }
+        .sec2 .polygon{
+            
+            width: var(--WIDTH-100PER);
+            min-height: var(--HEIGHT-200PX);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: var(--PADDING-0_8REM);
+            
+        }
+        .sec2 .polygon-1plac-cut{
+            max-width: var(--WIDTH-100PER);
+            clip-path: polygon(80% 0%,100% 0%,100% 80%,90% 80%,90% 100%,80% 80%,0% 80%,0% 0%);
+            background-color: var(--BACKGROUND-COLOR-RED);
+            
+        }
+        
+        .sec2 .polygon-2plac-cut{
+            max-width: var(--WIDTH-100PER);
+            clip-path: polygon(79% 0%, 93% 25%,93% 0%,100% 0%,100% 80%,90% 80%,90% 100%,80% 80%,0% 80%,0% 0%);
+            margin-top: var(--MARGIN-TOP--50PX);
+            
+            
+            
+
+        }
+        .polygon-child{
+            
+            height: var(--HEIGHT-80PER);
+            padding: var(--POLYGON-PADDING-IN-CHILD);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sec2 .polygon-odd{
+            background-color:var(--BACKGROUND-COLOR-RED);
+            
+
+        }
+        .sec2 .polygon-even{
+            background-color: var(--BACKGROUND-COLOR-WHITE);
+            color: var(--COLOR-RED);
+        }
+        .polygon-child h2:last-child{
+            align-self: flex-end;
+            
+        }
+        
+        
+        
+        
+
+        .sec3 .Download-Templates{
+            width: var(--WIDTH-80PER);
+            background-color: var(--BACKGROUND-COLOR-RGB-BLUE);
+            padding: var(--PADDING-0_8REM);
+            display: flex;
+            flex-direction: column;
+            gap: var(--GAP-1_5REM);
+            clip-path: polygon(95% 0,100% 4%,100% 100%,0% 100%,0% 0%);
+        }
+        .sec3 .Download-Templates .download-button,
+        .sec3 .Submit-the-form-template .Submit-button{
+            cursor: pointer;
+        }
+        .sec3 .Submit-the-form-template{
+            width: var(--WIDTH-80PER);
+            background-color: var(--BACKGROUND-COLOR-RGB-BLUE);
+            padding: var(--PADDING-1_5REM);
+            clip-path: polygon(90% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+            
+            
+            
+        }
+            table {
+                text-align: center;
+                color: var(--COLOR-BLACK);
+                width: var(--WIDTH-100PER);
+                border-collapse: collapse;
+             
+            }
+
+            th, td {
+               
+                border: 1px solid #ddd;
+                text-align: center;
+                padding: var(--PADDING-0_8REM);
+                
+            }
+
+            th {
+                background-color: var(--BACKGROUND-COLOR-RGB-BLUE);
+                color: var(--COLOR-WHITE);
+            }
+
+            
+            tr:nth-child(even) {
+                background-color: var(--BACKGROUND-ALICEBLUE);
+            }
+
+            .time {
+                font-weight: bold;
+            }
+
+            .red-row {
+                background-color: var(--BACKGROUND-COLOR-RED);
+                font-weight: bold;
+                color: var(--COLOR-WHITE);
+               
+            }
+
+            .last-row {
+                background-color: var(--BACKGROUND-COLOR-RGB-BLUE);
+                color: var(--COLOR-WHITE);
+                font-weight: bold;
+               
+            }
+        
+        .sec4 .committees,.reviewers,.publication,.technical,.event-publicity-and-logistic{
+                display: grid;
+                width: var(--WIDTH-80PER);
+                
+            }
+        .sec4{
+            background-color:var(--BACKGROUND-COLOR-RGB-BLUE) ;
+            text-align: center;
+          
+            
+        }
+        .sec4 .Introduct-professoir-div{
+            background-color:rgb(53, 31, 128);
+            
+            padding: var(--PADDING-0_8REM);
+            clip-path: polygon(90% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+
+        }
+        .sec5{
+            text-align: center;
+            
+            gap: var(--GAP-1_5REM);
+        }
+        .sec5 .MORE-INFO-AND-REDSTYLE-SEC5{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .sec5 p{
+            color:  var(--BACKGROUND-COLOR-RGB-BLUE);
+            
+        }
+        .parent-MORE-INFO-AND-REDSTYLE-SEC5{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: var(--WIDTH-80PER);
+            min-height: var(--HEIGHT-200PX);
+        }
+        .sec5 .MORE-INFO-AND-REDSTYLE-SEC5{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--PADDING-2REM);
+            width: var(--WIDTH-100PER);
+            
+            background-size: 40%;
+           background-image: url(redlinestyle.png);
+           background-repeat: no-repeat;
+            
+        }
+        
+        
+        .parent-MORE-INFO-AND-REDSTYLE-SEC5 .EVENT-VENUE,
+        .parent-MORE-INFO-AND-REDSTYLE-SEC5 .SPONSOR{
+             background-position:  left;
+        }
+        
+        
+        .GALLERY,.CONTACT-US{
+          
+           background-position: right;
+        }
+        
+        
+        
+        
+        
+        
+        .div-info-sec5{
+           
+            padding: var(--PADDING-1_5REM);
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://cambodiainvestmentreview.com/wp-content/uploads/2022/03/CADT-0-scaled.jpg");
+            background-position: center;
+            background-size: cover;
+            
+
+            
+        }
+        footer{
+            background-color: var(--BACKGROUND-COLOR-RGB-BLUE);
+            
+            color: var(--BACKGROUND-COLOR-WHITE);
+            
+        }
+        .cadt-anniversary-img{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        
+        footer,div{
+            display: flex;
+            flex-direction: column;
+            gap:var(--GAP-1_5REM);
+
+            
+        }
+        footer div:not(div:last-child){
+            margin: var(--GAP-1_5REM);
+        }
+        footer div:last-child p{
+            padding: var(--PADDING-0_8REM);
+        }
+        footer div:last-child{
+            text-align: center;
+        }    
+        @media screen and (min-width:320px) and (max-width:767px){
+           
+            .Global-ul{
+                flex-direction: column;
+                font-weight: var(--FONT-WEIGHT300);
+            }
+            .menu-synbol{
+                position: relative;
+                color: var(--BACKGROUND-COLOR-RED);
+                display: flex;
+                align-items: center;
+            }
+            .Menu-bar{
+                padding: 5vh 1.5vw 5vh 1.5vw;
+               
+                
+            }
+            
+            .Menu-bar:hover .drop-down-entire-menu{
+                display: block;
+                cursor: pointer;
+                animation: dropdown 2s ease; 
+
+            }
+             @keyframes dropdown {
+                0%{
+                    transform: translateX(-20px);
+                }
+                50%{
+                    transform: translateY(0);
+                }
+                
+            }
+            
+            
+            .drop-down-entire-menu {
+                position: absolute;
+                top: var(--NAV-HEIGHT);  
+                right:15%;
+                display: none;
+                background-color: var(--BACKGROUND-COLOR-WHITE);
+                padding: var(--PADDING-0_8REM) 0.5rem;
+                z-index: 10;
+                border-top: 2px solid orange;
+            }
+            
+            .sec2 .Specified-Reseaarch-Track-Area-parent{
+                display: flex;    
+                flex-direction: column;
+                text-align: center;
+                gap: var(--GAP-2REM);
+               
+
+            }    
+            .sec2 .polygon-min-1024px{
+                display: none;
+            }
+            .sec2{
+                background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                url('/Screenshot_2024-11-22_012201-removebg-preview (1).png');
+                background-repeat: no-repeat;
+                background-position: top right;
+                
+            }
+            
+            
+            .sec3 .Download-Templates .download-button{
+                background-color: var(--BACKGROUND-ORANGERED);
+                padding: var(--PADDING-0_8REM);
+                text-align: center;
+                clip-path: polygon(95% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+            }
+            .Submit-button{
+                text-align: center;
+                background-color: var(--BACKGROUND-ORANGERED);
+                clip-path: polygon(95% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+                padding: var(--PADDING-0_8REM);
+             }
+            .sec3 .table-area{
+                width: var(--WIDTH-80PER);
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+             .div-info-sec5{
+                width: var(--WIDTH-80PER);
+            }
+             .figure-sec5{
+                color: var(--BACKGROUND-COLOR-RGB-BLUE);
+            }
+            
+            
+            .figure-sec5 figcaption {
+         
+                flex-direction: column;
+                align-items: center;
+                gap: var(--GAP-0_8REM);
+            }
+            
+            .figure-sec5 figcaption img{
+                width: calc(var(--WIDTH-50PER) - 10%);
+
+            }
+            .map-about-sec5{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: var(--WIDTH-80PER);
+                
+            }
+            .cadt-location,.div-info-sec5{
+                 width:var(--WIDTH-80PER);          
+            }
+            
+        }
+        @media screen and (min-width:768px) and (max-width:1023px){
+            .Global-ul{
+                flex-direction: column;
+                font-weight: var(--FONT-WEIGHT300);
+            }
+            .menu-synbol{
+                position: relative;
+                color: var(--BACKGROUND-COLOR-RED);
+                display: flex;
+                align-items: center;
+            }
+            .Menu-bar{
+                
+                padding:  var(--MENU-BAR-PADDING-MIN768PX);
+                
+                
+                
+            }
+            
+            .Menu-bar:hover .drop-down-entire-menu{
+                display: block;
+                cursor: pointer;
+                
+               
+                
+            }
+            
+            .drop-down-entire-menu {
+                position: absolute;
+                top: var(--NAV-HEIGHT); 
+                right:20%;
+                display: none;
+                
+                background-color: var(--BACKGROUND-COLOR-WHITE);
+                
+                padding: var(--PADDING-0_8REM);
+                z-index: 10;
+                border-top: 2px solid orange;
+                animation: dropdown 2s ease; 
+
+            }
+            @keyframes dropdown {
+                0%{
+                    transform: translateX(-20px);
+                }
+                50%{
+                    transform: translateY(0);
+                }
+                
+            }
+
+            
+            
+            .Specified-Reseaarch-Track-Area-parent,footer{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,1fr);
+                gap: calc(var(--GAP-2REM) + 3rem);
+
+            }
+            .sec2 .polygon-min-1024px{
+                display: none;
+            }
+            
+            
+            .sec3 .Download-Templates .download-button{
+                background-color: var(--BACKGROUND-ORANGERED);
+                padding: var(--PADDING-0_8REM);
+                text-align: center;
+                clip-path: polygon(95% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+            }
+            .Submit-button{
+                text-align: center;
+                background-color: var(--BACKGROUND-ORANGERED);
+                clip-path: polygon(95% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+                padding: var(--PADDING-0_8REM);
+            }
+            .sec3 .table-area{
+                width: var(--WIDTH-80PER);
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .figure-sec5 figcaption {
+                
+                flex-direction: column;
+                align-items: center;
+                gap: var(--GAP-0_8REM);
+            }
+            .figure-sec5 figcaption img{
+                width: var(--WIDTH-50PER);
+            }
+            
+            .map-about-sec5{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: var(--WIDTH-80PER);
+                
+            }
+            .cadt-location,.div-info-sec5{
+                width:var(--WIDTH-80PER);          
+            }
+            footer div:last-child{
+                grid-column: 1/3;
+            }
+
+            
+               
+        }
+        @media screen and (min-width:1024px) {
+            .menu-synbol{
+                display: none;
+            }
+            
+            .Global-ul{
+                font-weight: var(--FONT-WEIGHT600);
+                flex-direction: row;
+                align-content: center;
+                gap: calc(var(--GAP-2REM) + 18px);
+                
+            }
+            .Research-drop-down{
+                cursor: pointer;
+                position: relative;
+            }
+            .Research-arrow{
+                flex-direction: row;
+                
+                padding: var(--MENU-BAR-PADDING-MIN768PX);
+            }
+            .drop-down-content{
+                
+                font-weight: var(--FONT-WEIGHT600);
+                color: var(--COLOR-BLACK);
+                line-height: calc(var(--MEDIEM-LINE-HEIGH) + 0.5);
+                width: var(--WIDTH-200PX);
+                position: absolute;
+                display: none;
+                top: calc(var(--NAV-HEIGHT) + 6.5vh);
+                
+                display: none;
+                background-color: var(--BACKGROUND-COLOR-WHITE);
+                padding: var(--PADDING-1_5REM);
+                z-index: 10;
+                border-top: 2px solid orange;
+                 animation: dropdown 2s ease; 
+
+            }
+            @keyframes dropdown {
+                0%{
+                    transform: translateX(-20px);
+                }
+                50%{
+                    transform: translateY(0);
+                }
+                
+            }
+          
+            
+            .Research-drop-down:hover .drop-down-content{
+                display: block;
+                
+            }
+            .Specified-Reseaarch-Track-Area-parent,footer{
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                
+               
+
+            }
+            footer div p{
+                line-height: calc(var(--MEDIEM-LINE-HEIGH) + 0.5);
+            }
+            .sec2 .polygon-parent{
+                width:var(--WIDTH-80PER);
+                
+            }
+            .sec2 .polygon-min-1024px{
+                display: flex;
+                
+                align-items: center;
+            }
+            .sec2 .polygon-1plac-cut{
+                display: none;
+            }
+            .sec2 .polygon-2plac-cut{
+                display: none;
+            }
+            
+           
+            footer div:last-child{
+                display: grid;
+                grid-column: 1/5;
+            }
+            .sec3 .Download-Templates{
+                padding: calc(var(--PADDING-2REM) + 0.8px);
+            }
+            .sec3 .Download-Templates .download-button{
+                border: 2px solid var(--BACKGROUND-ORANGERED);
+                padding: var(--PADDING-0_8REM);
+                text-align: center;
+                clip-path: polygon(95% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+             }
+             .sec3 .Download-Templates .download-button:hover{
+                background-color: var(--BACKGROUND-ORANGERED);
+                cursor: pointer;
+
+             }
+            .parent-download-button-download-templates{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                
+                padding: var(--PADDING-1_5REM);
+
+            }
+     
+            .Submit-button{
+            text-align: center;
+            border: 2px solid var(--BACKGROUND-ORANGERED);
+            clip-path: polygon(95% 0,100% 20%,100% 100%,0% 100%,0% 0%);
+            padding: var(--PADDING-0_8REM);
+             }
+             .Submit-button:hover{
+                background-color: var(--BACKGROUND-ORANGERED);
+                cursor: pointer;
+             }
+           
+            .sec3 .Submit-the-form-template{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: calc(var(--HEIGHT-200PX) + 200px);
+                clip-path: polygon(90% 0,100% 30%,100% 100%,0% 100%,0% 0%);
+            }
+            .committees,.reviewers,.publication,.technical,.event-publicity-and-logistic{
+                display: grid;
+                width: var(--WIDTH-80PER);
+                gap: calc(var(--GAP-2REM) + 2rem) var(--GAP-1_5REM);
+                
+            }
+            .committees{
+                grid-template-columns: repeat(2,1fr);
+            }
+            .reviewers,.publication,.technical,.event-publicity-and-logistic{
+                
+                grid-template-columns: repeat(3,1fr);
+            }
+            .contact {
+                color: var(--COLOR-RGB-BLUE);
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                columns: 3 33.33%; /* Creates 3 columns with a minimum width of 200px */
+     
+                column-rule: 10px solid black; /* Adds a line between columns */
+            }
+
+            .contact div{
+                width: 33.33%;
+                
+            }
+            figcaption{
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--GAP-1_5REM);
+            }
+            .map-about-sec5{
+                width: var(--WIDTH-80PER);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                
+            }
+            .map-about-sec5 div{
+                width: var(--WIDTH-50PER);
+                max-height: var(--HEIGHT-450PX);
+               
+            }
+            .figcaption-address-img img{
+                width: var(--WIDTH-50PER);
+                padding: 30px 20px 0 20px;
+    
+
+            }
+            
+            
+        }
+           
+    </style>
+
+</head>
+<body>
+    
+    <nav>
+        <div class="logo-container">
+            <img src="https://www.idri.edu.kh/wp-content/uploads/2024/06/CADT10-IDRI-Logo.webp" alt="">
+        </div>
+        <div class="Menu-bar">
+            <div  class="menu-synbol">
+                <i class="fi fi-br-menu-burger"></i>
+            </div>
+            <div class="drop-down-entire-menu nav-right-side">
+
+                <ul class="Global-ul">
+                    <li><a href="About.html">About</a></li>
+                    
+                    <div class="Research-drop-down">              
+                        <div class="Research-arrow ">
+                            <li><a href="Research.html">Research</a></li>
+                            <i class="fi fi-rr-angle-small-down"></i>
+                        </div>
+                        <div class="drop-down-content">
+                            <ul>
+                                <li>Sok Robot</li>
+                                <li>Kher Fastype</li>
+                                <li>Khmer TTs</li>
+                                <li>Khmer Asr</li>
+                                <li>Khmer Encoding</li>
+                            </ul>
+        
+                        </div>
+                    </div>
+                    <li><a href="Innovation.html">Innovation</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <main>
+        <section class="sec1">
+
+            <div class="banner1">
+                <br><br>
+                <h1>Connecting <span style="color: var(--COLOR-RED);"> ASEAN <br></span> Researchers for Digital Research</h1>
+               
+                <h3>November7-8, 2024</h3>
+               
+                <div class="box-submit-paper">
+                    <p>Submit Your Paper</p>
+
+                </div>
+                
+            </div>
+            
+            
+            
+        </section>
+        <section class="sec2">
+            <div class="red-line-style"></div>
+            <article>
+                <h2 >About Us </h2>
+                <p>ACET is the ASEAN conference that focuses on the latest research and Development in digital technology but more specifically on Natural Language Processing (NLP), Data Science, Networking & IoT, Artificial Intelligence (AI). ACET conference aims to connect researchers’ knowledge and Building applications for smarter societies.</p>
+                
+            </article>
+            <article>
+                <p ><strong style="color: var(--COLOR-RED);">RESEARCH, SHARE, CONNECT </strong>: Bringing together researchers from local and international communities through a forum for academicians, professionals, and researchers to discuss and exchange research results, innovative ideas, and experiences, fostering advancements in the field.</p>
+
+            </article>
+            <h2>4 Specified Reseaarch Track</h2>
+            <div class="Specified-Reseaarch-Track-Area-parent">
+                <div class="Specified-Reseaarch-Track-Area">
+                    <figure>
+                        <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/NLP.png" alt="">
+                        <figcaption>NLP</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="Specified-Reseaarch-Track-Area">
+                    <figure>
+                        <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/AI.png" alt="">
+                        <figcaption>AI</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="Specified-Reseaarch-Track-Area">
+                    <figure>
+                        <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/Data-Science.png" alt="">
+                        <figcaption>DAta Science</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="Specified-Reseaarch-Track-Area">
+                    <figure>
+                        <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/IoT.png" alt="">
+                        <figcaption>loT & Networking</figcaption>
+                    </figure>
+                    
+                </div>
+            </div>
+            <h2>Conference Journey</h2>
+            <br><br>
+            
+                <div class="polygon-parent">
+                    <div class="polygon-min-1024px">
+                        <img src="https://www.idri.edu.kh/wp-content/uploads/2024/08/Timeline-Updated-Desktop-scaled.webp" alt="">
+                    </div>
+                    <div class="polygon polygon-1plac-cut polygon-odd">
+                        <div class="polygon-child">
+                            <h2>31st May</h2>
+                            <h2>Call for <br> papers</h2>
+                        </div>
+                        
+        
+                    </div>
+                    <div class="polygon polygon-2plac-cut polygon-even">
+                        <div class="polygon-child">
+                            <h2>15th September</h2>
+                            <h2>Paper <br> submissions <br>deadline</h2>
+                        </div>
+    
+                    </div>
+                    <div class="polygon polygon-2plac-cut polygon-odd">
+                        <div class="polygon-child">
+                            <h2>30th September</h2>
+                            <h2>Notification <br> of Accepted <br>Papers</h2>
+                        </div>
+    
+                    </div>
+                    <div class="polygon polygon-2plac-cut polygon-even">
+                        <div class="polygon-child">
+                            <h2>07th October</h2>
+                            <h2>Cemera- <br> ready paper <br>submission</h2>
+                        </div>
+    
+                    </div>
+                    <div class="polygon polygon-2plac-cut polygon-odd">
+                        <div class="polygon-child">
+                            <h2>25th October</h2>
+                            <h2>Conference<br> registration <br>Deadline</h2>
+                        </div>
+    
+                    </div>
+                    <div class="polygon polygon-2plac-cut polygon-even">
+                        <div class="polygon-child">
+                            <h2>07th-08th <br> November</h2>
+                            <h2>Conference <br> date</h2>
+                        </div>
+    
+                    </div>
+                </div>
+                
+                
+            
+            
+        </section>
+        
+         <section class="sec3">
+            <h2 style="color: var(--BACKGROUND-COLOR-RGB-BLUE);font-weight: calc(var(--FONT-WEIGHT600) + 300);">SUMMISSION</h2>
+            <br>
+            <p style="color:var(--COLOR-GRAY);">instruction  to submit the paper</p>
+            
+            <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+            <div class="Download-Templates">
+                <h2>1.Download Templates</h2>
+                <div style="text-align: center;">
+                    <h2 >For the papers</h2>
+                </div>
+               <div class="parent-download-button-download-templates">
+                    <div class="download-button"><p>Download Latex</p></div>
+                    <div class="download-button"><p>Download Word</p></div>
+               </div>
+                <div style="text-align: center;"><h2>For the poster: Download LaTex poster templates</h2></div>
+                <div class="parent-download-button-download-templates">
+                    <div class="download-button"><p>Download landscape style</p></div>
+                    <div class="download-button"><p>Download Portrait Style</p></div>
+                </div>
+
+
+
+            </div>
+            <div class="Submit-the-form-template">
+                <h2>2. Subbmit the form as a PDF file via email:</h2>
+                <h2> <span style="color:var(--BACKGROUND-COLOR-RED);">acet@cadt.edu.kh</span></h2>
+                <br>
+                <div class="Submit-button"><p>Submit Form</p></div>
+
+            </div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE);">AGENDA</h2>
+            <p style="color:var(--COLOR-GRAY);">Agendaa for progress</p>
+            <a href="" style="color: var(--BACKGROUND-ORANGERED);">Find Agenda File</a>
+            <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE)">Day 1: Thursday,7 th November 2024</h2>
+        
+            <div class="table-area">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time (UTC+7:00)</th>
+                            <th>Topics</th>
+                            <th>Speakers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">8:30 – 9:00</td>
+                            <td>Conference Registration / Sign-in</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:00 – 9:05</td>
+                            <td>National Anthem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:05 – 9:20</td>
+                            <td>Welcome and Opening Remarks</td>
+                            <td>H.E. Dr. Sopheap Seng<br>President of Cambodia Academy of Digital Technology (CADT)</td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:20 – 9:50</td>
+                            <td>
+                                Keynote Speech: Educational Model for Cultivating Digital Talent in Cambodia: A CADT Case Study<br>
+                                <small>Samboeun Hean, Sokchea Kor, Tepmony Sim, Kimtho Po</small>
+                            </td>
+                            <td>H.E. Samboeun Hean<br>Vice President of CADT and PhD Student at ITC</td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:50 – 10:20</td>
+                            <td>
+                                Keynote Speech: Towards Robust Foundation Models for Khmer Large Language Models
+                            </td>
+                            <td>Mr. Rathanak Sreang<br>Department of Digital Government Transformation of Digital Government Committee</td>
+                        </tr>
+                        <tr>
+                            <td class="time">10:20 – 10:40</td>
+                            <td class="red-row" colspan="2" >Coffee Break</td>
+                            
+                        </tr>
+                        <tr class="last-row">
+                            <td colspan="3">NLP Track</td>
+                        </tr>
+                        <tr>
+                            <td class="time">10:40 – 11:05</td>
+                            <td>
+                                Paper Presentation (1): Online Identification of Individuals from Khmer Handwriting Using a Deep Learning Approach<br>
+                                <small>Kimlong Ngin, Dona Valy, Sokhey Phauk</small>
+                            </td>
+                            <td>Mr. Kimlong Ngin, ITC</td>
+                        </tr>
+                        <tr>
+                            <td class="time">11:05 – 11:30</td>
+                            <td>
+                                Paper Presentation (2): State-of-the-Art Khmer Text Recognition Using Deep Learning Models<br>
+                                <small>Saly Keo, Mickaël Coustaty, Souhail Bakkali, Marçal Rossinyol</small>
+                            </td>
+                            <td>Dr. Saly Keo, PhD Student at University of La Rochelle, France</td>
+                        </tr>
+                        <tr>
+                            <td class="time">11:30 – 11:55</td>
+                            <td>
+                                Paper Presentation (3): Evaluating the Impact of Khmer Font Types on Text Recognition<br>
+                                <small>Vannkinh Nom, Souhail Bakkali, Muhammad Muzzamil Luqman, Mickaël Coustaty, Jean-Marc Ogier</small>
+                            </td>
+                            <td>Ms. Vannkinh Nom, PhD Student at University of La Rochelle, France</td>
+                        </tr>
+                        <tr>
+                            <td class="time">11:55 – 13:30</td>
+                            <td class="red-row" colspan="2">Lunch Break</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="time">13:30 – 14:00</td>
+                            <td>
+                                Keynote Speech: Practice and Prospects for the Application of Large Models in the Government Domain
+                            </td>
+                            <td>Dr. Zhipeng Liu, Research Associate at China Academy of Information Communications Technology (CAICT)</td>
+                        </tr>
+                        <tr>
+                            <td class="time">14:00 – 14:25</td>
+                            <td>
+                                Keynote Speech: Advanced Mathematical Modeling and Machine Learning for Equatorial Plasma Bubble (EPB) Analysis
+                            </td>
+                            <td>Prof. Dr. Pornchai Supnithi, KMITL, Thailand</td>
+                        </tr>
+                        <tr>
+                            <td class="time">14:25 – 14:45</td>
+                            <td class="red-row" colspan="2">Break</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="time">14:45 – 15:10</td>
+                            <td>
+                                Paper Presentation (4): Khmer Spellchecking: A Holistic Approach<br>
+                                <small>Rina Buoy, Sovisal Chenda, Nguonly Taing, Marry Kong</small>
+                            </td>
+                            <td>Dr. Rina Buoy, Techo Startup Center</td>
+                        </tr>
+                        <tr>
+                            <td class="time">15:10 – 15:35</td>
+                            <td>
+                                Paper Presentation (5): Utilizing Pretrained Model to Build a Khmer-English Machine Translation<br>
+                                <small>Acheadeth Lay, Sethserey Sam, Sophea Chhun</small>
+                            </td>
+                            <td>Mr. Acheadeth Lay, MPTC</td>
+                        </tr>
+                        <tr>
+                            <td class="time">15:35 – 16:00</td>
+                            <td>
+                                Paper Presentation (6): A Survey on Importance of Homophones Spelling Correction Model for Khmer Authors<br>
+                                <small>Seanghort Born, Madeth May, Claudine Piau-Toffolon, Sébastien Iksal</small>
+                            </td>
+                            <td>Mr. Seanghort Born, PhD Student at Le Mans University, France</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE)">Day 2: Friday, 8th November 2024</h2>
+            <div class="table-area">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time (UTC+7:00)</th>
+                            <th>Topics</th>
+                            <th>Speakers</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">AI, Data and Telecommunications Track</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">8:30 – 9:00</td>
+                            <td>Conference Registration / Sign-in</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:00 – 9:05</td>
+                            <td>National Anthem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:05 – 9:20</td>
+                            <td>Welcome and Opening Remarks</td>
+                            <td>H.E. Dr. Sopheap Seng<br>President of Cambodia Academy of Digital Technology (CADT)</td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:20 – 9:50</td>
+                            <td>
+                                Keynote Speech: Educational Model for Cultivating Digital Talent in Cambodia: A CADT Case Study<br>
+                                <small>Samboeun Hean, Sokchea Kor, Tepmony Sim, Kimtho Po</small>
+                            </td>
+                            <td>H.E. Samboeun Hean<br>Vice President of CADT and PhD Student at ITC</td>
+                        </tr>
+                        <tr>
+                            <td class="time">9:50 – 10:20</td>
+                            <td>
+                                Keynote Speech: Towards Robust Foundation Models for Khmer Large Language Models
+                            </td>
+                            <td>Mr. Rathanak Sreang<br>Department of Digital Government Transformation of Digital Government Committee</td>
+                        </tr>
+                        <tr>
+                            <td class="time">10:20 – 10:40</td>
+                            <td class="red-row" colspan="2">Coffee Break</td>
+                        </tr>
+                        <tr class="last-row">
+                            <td colspan="3">NLP Track</td>
+                        </tr>
+                        <tr>
+                            <td class="time">10:40 – 11:05</td>
+                            <td>
+                                Paper Presentation (1): Online Identification of Individuals from Khmer Handwriting Using a Deep Learning Approach<br>
+                                <small>Kimlong Ngin, Dona Valy, Sokhey Phauk</small>
+                            </td>
+                            <td>Mr. Kimlong Ngin, ITC</td>
+                        </tr>
+                        <tr>
+                            <td class="time">11:05 – 11:30</td>
+                            <td>
+                                Paper Presentation (2): State-of-the-Art Khmer Text Recognition Using Deep Learning Models<br>
+                                <small>Saly Keo, Mickaël Coustaty, Souhail Bakkali, Marçal Rossinyol</small>
+                            </td>
+                            <td>Dr. Saly Keo, PhD Student at University of La Rochelle, France</td>
+                        </tr>
+                        <tr>
+                            <td class="time">11:30 – 11:55</td>
+                            <td>
+                                Paper Presentation (3): Evaluating the Impact of Khmer Font Types on Text Recognition<br>
+                                <small>Vannkinh Nom, Souhail Bakkali, Muhammad Muzzamil Luqman, Mickaël Coustaty, Jean-Marc Ogier</small>
+                            </td>
+                            <td>Ms. Vannkinh Nom, PhD Student at University of La Rochelle, France</td>
+                        </tr>
+                        <tr>
+                            <td class="time">11:55 – 13:30</td>
+                            <td class="red-row" colspan="2">Lunch Break</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="time">13:30 – 14:00</td>
+                            <td>
+                                Keynote Speech: Practice and Prospects for the Application of Large Models in the Government Domain
+                            </td>
+                            <td>Dr. Zhipeng Liu, Research Associate at China Academy of Information Communications Technology (CAICT)</td>
+                        </tr>
+                        <tr>
+                            <td class="time">14:00 – 14:25</td>
+                            <td>
+                                Keynote Speech: Advanced Mathematical Modeling and Machine Learning for Equatorial Plasma Bubble (EPB) Analysis
+                            </td>
+                            <td>Prof. Dr. Pornchai Supnithi, KMITL, Thailand</td>
+                        </tr>
+                        <tr>
+                            <td class="time">14:25 – 14:45</td>
+                            <td class="red-row" colspan="2">Break</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="time">14:45 – 15:10</td>
+                            <td>
+                                Paper Presentation (4): Khmer Spellchecking: A Holistic Approach<br>
+                                <small>Rina Buoy, Sovisal Chenda, Nguonly Taing, Marry Kong</small>
+                            </td>
+                            <td>Dr. Rina Buoy, Techo Startup Center</td>
+                        </tr>
+                        <tr>
+                            <td class="time">15:10 – 15:35</td>
+                            <td>
+                                Paper Presentation (5): Utilizing Pretrained Model to Build a Khmer-English Machine Translation<br>
+                                <small>Acheadeth Lay, Sethserey Sam, Sophea Chhun</small>
+                            </td>
+                            <td>Mr. Acheadeth Lay, MPTC</td>
+                        </tr>
+                        <tr>
+                            <td class="time">15:35 – 16:00</td>
+                            <td>
+                                Paper Presentation (6): A Survey on Importance of Homophones Spelling Correction Model for Khmer Authors<br>
+                                <small>Seanghort Born, Madeth May, Claudine Piau-Toffolon, Sébastien Iksal</small>
+                            </td>
+                            <td>Mr. Seanghort Born, PhD Student at Le Mans University, France</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+        </section >
+        
+        <section class="sec4">
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-WHITE)">COMMITTEES</h2>
+            <p style="color:var(--COLOR-GRAY);">The Committees for research and development paper submission</p>
+            <br>
+            <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+
+            <div class="committees " >
+                <div class="Introduct-professoir-div">
+                    <h2>Dr.Sopheap Seng</h2>
+                    <p>Conference Chair</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Rottana Ly</h2>
+                    <p>Program Chairr</p>
+    
+                </div>
+            </div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-WHITE) ">REVIEWERS</h2>
+            <div class="reviewers">
+                <div class="Introduct-professoir-div">
+                    <h2>Prof. Philippe Lalanda</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Prof. Didier Donsez</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Prof. Eric Castelli</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Prof. Dominique Vaufreydaz</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Masugi Inoue</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Hour Kaing</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Sovann En</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Sandra Castellanos-Paez</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Rottana Ly</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Phutphalla Kong</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Lihour Nov</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Hongly Va</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Soky Kak</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Dona Valy</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Rothna Pec</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Kimsrornn Khon</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Dara Tith</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr.Sopheap Seng</h2>
+                    <p>Reviewer</p>
+    
+                </div>
+                
+            </div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-WHITE)">PUBLICATION</h2>
+            <div class="publication">
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Sovuthy Cheab</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Lihour Nov</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr.Sopheap Seng</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Pisal Chanty</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Vathna Lay</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Ms. Sonita Te</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Leangsiv Han</h2>
+                    <p>Publication</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Mengchhuong Ang</h2>
+                    <p>Publication</p>
+    
+                </div>
+            </div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-WHITE)">TECHNICAL</h2>
+            <div class="technical">
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Phutphalla Kong</h2>
+                    <p>Technical</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr. Hongly Va</h2>
+                    <p>Technical</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Dr.Sopheap Seng</h2>
+                    <p>Technical</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Ronan Ogor</h2>
+                    <p>Technical</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Sophal Thear</h2>
+                    <p>Technical</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Soklong Him</h2>
+                    <p>Technical</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Ms. Sokchovy Monirath</h2>
+                    <p>Technical</p>
+    
+                </div>
+            </div>
+            <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-WHITE)">EVENT,PUBLICITY 
+                 AND LOGISTIC</h2> 
+            <div class="event-publicity-and-logistic">
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Hieng Mao</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Mr. Soklay Heng</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Mr. Sokleap Som</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Mr. Natt Korat</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Ms. Kimhouy Yann</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Mr. Ponleur Veng</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Ms. Sofy Thy</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                <div class="Introduct-professoir-div">
+                    <h2>Mr. Hangnypolen Heng</h2>
+                    <p>Event, Publicity and Logistic</p>
+                    
+                </div>
+                <div class="Introduct-professoir-div">
+                   <h2>Mrs. Davin Ly</h2>
+                   <p>Event, Publicity and Logistic</p>
+   
+               </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Mrs. Khmery Vann</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+                 <div class="Introduct-professoir-div">
+                    <h2>Mr. Pov Sreng</h2>
+                    <p>Event, Publicity and Logistic</p>
+    
+                </div>
+              
+                
+                
+            </div>
+        
+           
+
+            
+
+
+            
+            
+        </section>
+        <section class="sec5">
+            <div class="parent-MORE-INFO-AND-REDSTYLE-SEC5">
+
+                <div class="MORE-INFO-AND-REDSTYLE-SEC5 EVENT-VENUE">
+                    <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE);">EVENT VENUE</h2>
+                    <p style="color:var(--COLOR-GRAY);">Event venue location info and gallery</p>
+                    <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+                </div>
+            </div>
+            <div class="map-about-sec5">
+                <div class="cadt-location">
+                    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.22174169654224!2d104.911674282076!3d11.655532470638335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109516bdea989b3%3A0x372d2c5e0e14b706!2sCambodia%20Academy%20of%20Digital%20Technology%20(CADT)!5e0!3m2!1sen!2skh!4v1732554562921!5m2!1sen!2skh" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                </div>
+                <div class="div-info-sec5" >
+    
+                    <h2>Cambodia Academy of Digital Technology, Phnom Penh</h2>
+                    <p style="color: white;">CADT is a national flagship research and education institution for Digital Technology and Innovation, nurturing digital talent and innovators to drive Cambodia toward a digital society.</p>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="parent-MORE-INFO-AND-REDSTYLE-SEC5">
+                <div class="MORE-INFO-AND-REDSTYLE-SEC5 GALLERY">
+                    <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE)">GALLERY</h2>
+                    <p style="color:var(--COLOR-GRAY);">Check our gallery from recent events</p>
+                    <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+                </div>
+            </div>
+            <img src="GAllery.png" alt="">
+            <div class="parent-MORE-INFO-AND-REDSTYLE-SEC5">
+                <div class="MORE-INFO-AND-REDSTYLE-SEC5 CONTACT-US">
+                    <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE)">CONTACT US</h2>
+                    <p style="color:var(--COLOR-GRAY);">We helllp to answer your questions</p>
+                    <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+                </div>
+            </div>
+            <br>
+            <div class="contact">
+                <div class="">
+                    <figure class="figure-sec5" >
+                        <figcaption class="figcaption-address-img">
+                            
+                                <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/location.png" alt="">
+                            <h2>ADDRESS</h2>
+                        </figcaption>
+                        <p>2nd Bridge Prek Leap, National Road Number 6,Phnom penh 12252</p>
+                    </figure>
+                    
+                    
+                </div>
+                
+                <div>
+                    <figure class="figure-sec5">
+                        <figcaption>
+                            <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/phone.png" alt="" width="20%">
+                            <h2>PHONE NUMBER</h2>
+                        </figcaption>
+                        <p>+885 10 340 000</p>
+                        
+                    </figure>
+                    
+                </div>
+                <div>
+                    <figure class="figure-sec5">
+                        <figcaption>
+                            <img src="https://www.idri.edu.kh/wp-content/uploads/2023/07/message.png" alt="" 
+                            width="40%">
+                            <h2>EMAIL</h2>
+                        </figcaption>
+                        
+                        <p>acet@cadt.edu.kh</p>
+                    </figure>
+                    
+                </div>
+    
+            </div>
+            <br><br><br>
+            <div class="parent-MORE-INFO-AND-REDSTYLE-SEC5">
+                
+                <div class="MORE-INFO-AND-REDSTYLE-SEC5 SPONSOR">
+                    <h2 style="font-weight: calc(var(--FONT-WEIGHT600) + 300); color:  var(--BACKGROUND-COLOR-RGB-BLUE) ">SPONSOR</h2>
+                    <p style="color:var(--COLOR-GRAY);">Our sponsor for this conference event</p>
+                    <div style="background-color: var(--BACKGROUND-COLOR-RED); width: 10vw;height: 5px;"></div>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="cadt-anniversary-img">
+                <img src="https://www.idri.edu.kh/wp-content/uploads/2024/06/CADT10-LOGO-anniversary-03-480x230.png" alt="CADT-logo" width="50%">
+            </div>
+
+
+        
+       
+    </main>
+    <footer>
+        
+            <div >
+                <img src="https://www.idri.edu.kh/wp-content/uploads/2023/09/ACET-White-Logo.png" alt="" width="40%" >
+
+                <p>The aims of the ACET 2024 to promote emerging technologies in Cambodia. This conference provides a place and opportunity to exchange ideas, discuss current issues, and share experiences among researchers, professionals and practitioners.</p>
+            </div>
+            <div>
+                <h2 style="color: var(--BACKGROUND-COLOR-RED);">USEFUL LINKS</h2>
+
+                <p>Home</p>
+                <p>About Us</p>
+                
+            </div>
+            <div>
+                <h2 style="color: var(--BACKGROUND-COLOR-RED);">FREE-ACCESS REPOSIOTRY</h2>
+
+                <p>ACET 2023</p>
+                <p>ACET 2022</p>
+                <p>ONA 2021</p>
+                <p>ONA 2020</p>
+                <p>ONA 2019</p>
+                
+            </div>
+            <div>
+                <h2 style="color: var(--BACKGROUND-COLOR-RED);">USEFUL LINKS</h2>
+
+                <p><strong>Email:</strong> acet@cadt.edu.kh</p>
+                <p><strong>Phone: </strong> +855 10 340 000</p>
+                <p><strong>Address: </strong>National Road 6A, Kthor, Prek Leap Chroy ​Changvar, Phnom Penh, Cambodia
+
+                </p>
+                
+            </div>
+            <div class="last-p"><p style="background-color: var(--BACKGROUND-COLOR-RED);">IDRI @2024 All Rights Reserved</p></div>
+    </footer>
+    
+    <!-- <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> -->
+    
+</body>
+</html>
